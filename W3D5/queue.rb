@@ -1,18 +1,29 @@
-class Queue
+class MyQueue
   def initialize
-    @queue = []
+    @store = []
   end
 
   def enqueue(el)
-    @queue << el
+    @store << el
   end
 
   def dequeue
-    @queue.shift
-    @queue
+    @store.shift
+  end
+
+  def show
+    print store
   end
 
   def peek
-    @queue[-1]
+    @store.last
   end
+
+  def empty?
+    @store.empty?
+  end
+
+  private
+
+  attr_reader :store
 end

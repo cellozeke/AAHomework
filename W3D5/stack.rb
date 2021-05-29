@@ -1,18 +1,31 @@
 class Stack
   def initialize
-    @stack = []
+    @store = []
   end
 
   def push(el)
-    @stack << el
+    store << el
   end
 
   def pop
-    @stack.delete_at(@stack.length - 1) unless @stack.empty?
-    @stack
+    # store.delete_at(store.length - 1) unless store.empty?
+    # store
+    store.pop
   end
 
   def peek
-    @stack[-1]
+    store.last
   end
+
+  def empty?
+    store.empty?
+  end
+
+  def inspect
+    "#<Store:#{object_id}>"
+  end
+
+  private
+
+  attr_reader :store
 end
